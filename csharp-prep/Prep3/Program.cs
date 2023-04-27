@@ -4,6 +4,25 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Prep3 World!");
+        double guess = 0;
+
+        Console.Write("What is the magic number? ");
+        String response = Console.ReadLine();
+        double number = double.Parse(response);
+
+        while (number != guess)
+        {
+            Console.Write("What is your guess?");
+            String responseGuess = Console.ReadLine();
+            guess = double.Parse(responseGuess);
+            if (guess < number)
+            {
+                Console.Write("Higher");
+            }
+            else if (guess > number)
+            {
+                Console.Write("Lower");
+            }
+        }
     }
 }
