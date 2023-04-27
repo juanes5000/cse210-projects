@@ -12,18 +12,21 @@ class Program
 
         while (number != guess)
         {
+            
             Console.Write("What is your guess? ");
             String responseGuess = Console.ReadLine();
             guess = double.Parse(responseGuess);
             if (guess < number)
             {
-                Console.Write(" ");
-                Console.Write("Higher");
+                
+                Console.Write("Higher ");
+                
             }
             else if (guess > number)
             {
-                Console.Write(" ");
-                Console.Write("Lower");
+                
+                Console.Write("Lower ");
+                
             }
         }
         Console.Write("You guessed it!");
