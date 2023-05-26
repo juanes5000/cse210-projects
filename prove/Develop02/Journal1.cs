@@ -15,7 +15,7 @@ public class Journal1
         _text = Console.ReadLine();
 
         String _dateTime = _dt.ToString();
-        _entrys.Add($"{_dateTime},{_promt},{_text}");
+        _entrys.Add($"{_dateTime}+{_promt}+{_text}");
         
     } 
     public List<string> DisplayingAllEntries()
@@ -27,7 +27,7 @@ public class Journal1
         string[] lines =System.IO.File.ReadAllLines(filename);
         foreach (string line in lines)
         {
-            string[] parts = line.Split(",");    
+            string[] parts = line.Split("+");    
             
             Console.WriteLine($"{parts[0]} - Promt: {parts[1]}");
             Console.WriteLine($"{parts[2]}");
