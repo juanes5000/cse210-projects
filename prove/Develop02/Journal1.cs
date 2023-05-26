@@ -49,9 +49,24 @@ public class Journal1
         }
 
     }
-    public String LoadingFromFile(string filename)
+public List<string> LoadingFromFile(string filename)
+{
+    List<string> entries = new List<string>();
+
+    try
     {
-        return filename;
+        string[] lines = File.ReadAllLines(filename);
+        entries.AddRange(lines);
+    }
+    catch (FileNotFoundException)
+    {
+        Console.WriteLine("File not found.");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error loading file: {ex.Message}");
     }
 
+    return entries;
+}
 }

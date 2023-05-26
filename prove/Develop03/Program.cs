@@ -4,6 +4,29 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop03 World!");
+        Scripture1 scripture = new Scripture1();
+        Reference reference = new Reference();
+        Console.WriteLine("Welcome to scripture memorizer program");
+        Console.WriteLine(reference.StringReference()+ " " + scripture.GetRenderedText());
+        Console.WriteLine("Press Enter to hide words or type 'quit' to exit.");
+
+        while (true)
+        {
+            string input = Console.ReadLine();
+            if (input.ToLower() == "quit")
+                break;
+
+            scripture.HideWords(3);
+            Console.WriteLine(reference.StringReference()+ " " + scripture.GetRenderedText());
+           
+
+            if (scripture.IsCompletelyHidden())
+            {
+                Console.WriteLine("All words are hidden. Press Enter to exit.");
+                Console.ReadLine();
+                break;
+            }
+        }
     }
 }
+
