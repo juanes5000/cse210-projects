@@ -22,8 +22,6 @@ class Program
 
             if (scripture.IsCompletelyHidden())
             {
-                Console.WriteLine("All words are hidden. Press Enter to exit.");
-                Console.ReadLine();
                 break;
             }
         }
