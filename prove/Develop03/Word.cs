@@ -1,30 +1,30 @@
 class Word 
 {
-    private string singleWord;
-    private bool hidden;
+    private string _singleWord;
+    private bool _hidden;
     public Word(String word)
     {
-        singleWord = word;
-        hidden = false;
+        _singleWord = word;
+        _hidden = false;
     }
 
     public void Hide()
     {
-        hidden = true;
+        _hidden = true;
     }
     public void Show()
     {
-        hidden = false;
+        _hidden = false;
     }
     public bool IsHidden()
     {
-        return hidden;
+        return _hidden;
     }
     public string GetRenderedText()
     {
-        if (hidden)
-            return new string('_', singleWord.Length);
+        if (_hidden)
+            return new string('_', _singleWord.Length);
         else
-            return singleWord;
+            return _singleWord;
     }
 }

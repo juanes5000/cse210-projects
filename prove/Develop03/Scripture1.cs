@@ -1,19 +1,19 @@
 class Scripture1 
 {
-    private string text = 
+    private string _text = 
     "For God so loved the world, that he gave his only begotten Son,"+
     "that whosoever believeth in him should not perish, but have "+
     "everlasting life.";
-    List<Word> list = new List<Word>();
+    List<Word> _list = new List<Word>();
 
     public Scripture1(){
 
-        string[] splittedStringArray = text.Split(' ');
-        list = new List<Word>();
+        string[] splittedStringArray = _text.Split(' ');
+        _list = new List<Word>();
 
         foreach (string word in splittedStringArray)
         {
-            list.Add(new Word(word));
+            _list.Add(new Word(word));
         }
     }
 
@@ -24,8 +24,8 @@ class Scripture1
 
         while (hiddenCount < count)
         {
-            int randomIndex = random.Next(list.Count);
-            Word word = list[randomIndex];
+            int randomIndex = random.Next(_list.Count);
+            Word word = _list[randomIndex];
 
             if (!word.IsHidden())
             {
@@ -38,7 +38,7 @@ class Scripture1
     {        
         string renderedText = "";
 
-        foreach (Word word in list)
+        foreach (Word word in _list)
         {
             renderedText += word.GetRenderedText() + " ";
         }
@@ -47,7 +47,7 @@ class Scripture1
     }
     public bool IsCompletelyHidden()
     {
-        foreach (Word word in list)
+        foreach (Word word in _list)
         {
             if (!word.IsHidden())
                 return false; 
